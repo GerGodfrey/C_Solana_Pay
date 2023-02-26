@@ -19,7 +19,7 @@ export default function Checkout() {
   const qrRef = useRef<HTMLDivElement>(null) // ref to a div where we'll show the QR code
   let amount = useMemo(() => calculatePrice(router.query), [router.query])
   const reference = useMemo(() => Keypair.generate().publicKey, []) // Unique address that we can listen for payments to
-  const network = WalletAdapterNetwork.Mainnet // TODO Devnet
+  const network = WalletAdapterNetwork.Devnet // TODO Mainnet
   const endpoint = clusterApiUrl(network)
   const connection = new Connection(endpoint)
 
